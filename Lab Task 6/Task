@@ -1,0 +1,10 @@
+find . -type f > filelist.txt
+cpio -ov < filelist.txt > backup.cpio
+
+cpio -idv < backup.cpio
+
+find . -type f | cpio -ov | gzip > backup.cpio.gz
+
+tar -cvf backup.tar myfolder/
+
+tar -xvf backup.tar

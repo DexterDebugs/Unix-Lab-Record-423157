@@ -1,0 +1,12 @@
+awk '$2 == "ERROR" { print $1, $4 }' logfile.txt
+awk '$2 == "ERROR" { $1=$2=""; $3=""; print substr($0,4) }' logfile.txt
+
+awk 'NR>1 {math+=$2; sci+=$3; eng+=$4; count++}
+     END {print "Math Avg =", math/count; print "Science Avg =", sci/count; print "English Avg =", eng/count}' marks.csv
+awk -F'\t' 'NR>1 { ... }' marks.csv
+
+awk '{ ip[$1]++ } END { for (i in ip) print i, ip[i] }' server.log
+
+sed 's/^\([^ ]*\)\(.*\)\([^ ]*\)$/\3\2\1/' input.txt
+
+sed -E 's/\b([a-zA-Z]+) \1\b/\1/g' file.txt

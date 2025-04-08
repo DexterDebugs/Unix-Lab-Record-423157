@@ -1,0 +1,15 @@
+sudo apt update
+sudo apt install curl git vim
+
+sudo apt remove package-name
+
+sudo dpkg -i package-name.deb
+# Fix missing dependencies, if any
+sudo apt --fix-broken install
+
+sudo rpm -ivh package-name.rpm
+
+sudo rpm -Uvh package-name.rpm
+
+sudo rpm -e package-name
+

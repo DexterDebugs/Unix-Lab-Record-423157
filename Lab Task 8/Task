@@ -1,8 +1,6 @@
 sudo apt update
 sudo apt install curl git vim
 
-sudo apt remove package-name
-
 sudo dpkg -i package-name.deb
 # Fix missing dependencies, if any
 sudo apt --fix-broken install
@@ -13,3 +11,10 @@ sudo rpm -Uvh package-name.rpm
 
 sudo rpm -e package-name
 
+sudo apt install git
+
+sudo dnf install git    # Or
+sudo yum install git
+
+wget https://example.com/package-name.deb
+sudo dpkg -i package-name.deb

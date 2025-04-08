@@ -1,0 +1,17 @@
+mkdir /home/user/cvsrepo
+cvs -d /home/user/cvsrepo init
+
+export CVSROOT=/home/user/cvsrepo
+
+mkdir myproject
+cd myproject
+echo "Hello, CVS" > hello.txt
+
+cd ..
+cvs import -m "Initial import" myproject vendor start
+
+cvs checkout myproject
+cd myproject
+
+echo "Another line" >> hello.txt
+cvs commit -m "Added another line"

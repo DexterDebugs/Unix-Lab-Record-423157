@@ -1,0 +1,61 @@
+echo "Enter a number:"
+read num
+if [ $((num % 2)) -eq 0 ]
+then
+    echo "$num is even"
+else
+    echo "$num is odd"
+fi
+-------------------------------------------
+echo "Enter a year:"
+read year
+if [ $((year % 4)) -eq 0 ] && [ $((year % 100)) -ne 0 ] || [ $((year % 400)) -eq 0 ]
+then
+    echo "$year is a leap year"
+else
+    echo "$year is not a leap year"
+fi
+
+--------------------------------------------
+echo "Enter a number:"
+read n
+fact=1
+while [ $n -gt 1 ]
+do
+    fact=$((fact * n))
+    n=$((n - 1))
+done
+echo "Factorial is $fact"
+-----------------------------------
+echo "Enter first number:"
+read a
+echo "Enter second number:"
+read b
+echo "Before swapping: a=$a, b=$b"
+temp=$a
+a=$b
+b=$temp
+echo "After swapping: a=$a, b=$b"
+---------------------------------------------------
+echo "Enter first number:"
+read a
+echo "Enter second number:"
+read b
+
+x=$a
+y=$b
+
+# GCD
+while [ $b -ne 0 ]
+do
+    temp=$b
+    b=$((a % b))
+    a=$temp
+done
+gcd=$a
+
+# LCM = (x * y) / GCD
+lcm=$(( (x * y) / gcd ))
+
+echo "GCD is $gcd"
+echo "LCM is $lcm"
